@@ -1070,19 +1070,44 @@ input:focus-visible {
   position: relative;
   min-height: 304px;
   padding: 32px;
+  overflow: hidden;
 }
 
-.sidebar-card--price::after {
-  content: "";
+.sidebar-card__gift-stack {
   position: absolute;
-  right: 0;
+  right: -10px;
+  bottom: -8px;
+  width: 170px;
+  height: 130px;
+  pointer-events: none;
+}
+
+/* красная коробка — СЗАДИ */
+.sidebar-card__gift--red {
+  position: absolute;
+  right: 15px;
   bottom: 0;
+  z-index: 1;
   width: 112px;
   height: 106px;
-  background-image: url("../assets/images/sidebar-gift.png");
-  background-size: 210px auto;
-  background-position: right bottom;
-  background-repeat: no-repeat;
+}
+
+/* синяя коробка — СПЕРЕДИ */
+.sidebar-card__gift--blue {
+  position: absolute;
+  right: -13px;
+  bottom: 2px;
+  z-index: 2;
+  width: 115px;
+  height: 96px;
+}
+
+.sidebar-card--price .sidebar-card__title,
+.sidebar-card--price .sidebar-card__text,
+.sidebar-card--price .sidebar-card__price,
+.sidebar-card--price .sidebar-card__buy {
+  position: relative;
+  z-index: 3;
 }
 
 .sidebar-card--price .sidebar-card__title {
