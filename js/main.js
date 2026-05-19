@@ -9,6 +9,24 @@ const addMediaQueryChangeListener = (mediaQuery, handler) => {
   }
 };
 
+const getEventPath = (event) => {
+  if (typeof event.composedPath === 'function') {
+    return event.composedPath();
+  }
+
+  const path = [];
+  let node = event.target;
+
+  while (node) {
+    path.push(node);
+    node = node.parentNode;
+  }
+
+  path.push(window);
+
+  return path;
+};
+
 
 const initStubLinks = () => {
   document.querySelectorAll('a[href="#"]').forEach((link) => {
@@ -87,7 +105,7 @@ const initMobileMenu = () => {
       return;
     }
 
-    const clickPath = event.composedPath();
+    const clickPath = getEventPath(event);
 
     if (clickPath.includes(mobileMenu) || clickPath.includes(burgerButton)) {
       return;

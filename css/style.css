@@ -29,6 +29,15 @@
   --radius-pill: 24px;
   --transition-default: 0.2s ease;
   --container-width: 1200px;
+  /* Layout aliases */
+  --layout-article-width: 690px;
+  --layout-sidebar-width: 282px;
+  --layout-desktop-width: 1200px;
+  --header-height-desktop: 76px;
+  --header-height-mobile: 72px;
+  --article-footer-gap-mobile: 36px;
+  --article-footer-gap-tablet: 40px;
+
 }
 
 body {
@@ -68,6 +77,7 @@ input:focus-visible {
   padding: 0;
 }
 
+/* Header */
 .skip-link {
   position: absolute;
   top: 8px;
@@ -274,6 +284,7 @@ input:focus-visible {
   color: var(--color-main);
 }
 
+/* Blog page */
 .blog {
   position: relative;
   overflow-x: hidden;
@@ -490,6 +501,7 @@ input:focus-visible {
 
 /* Article styles are defined in the dedicated article section below. */
 
+/* Footer */
 .footer {
   padding: 40px 0 24px;
   color: var(--color-white);
@@ -546,6 +558,9 @@ input:focus-visible {
 }
 
 .subscribe-form__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 64px;
   min-height: 48px;
   border: none;
@@ -553,6 +568,12 @@ input:focus-visible {
   color: var(--color-white);
   background-color: var(--color-accent);
   font-size: 24px;
+}
+
+.subscribe-form__icon {
+  display: block;
+  width: 24px;
+  height: 24px;
 }
 
 .footer__text {
@@ -654,13 +675,15 @@ input:focus-visible {
   z-index: -1;
   width: 686px;
   height: 606px;
-  border-radius: 50%;
-  background-color: var(--color-decor-circle);
-  opacity: 1;
+  background-image: url("../assets/images/article-side-decor.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
   transform: translateY(-35%);
   pointer-events: none;
 }
 
+/* CTA */
 .cta {
   position: relative;
   margin-top: 48px;
@@ -676,9 +699,10 @@ input:focus-visible {
   z-index: -1;
   width: 272px;
   height: 240px;
-  border-radius: 50%;
-  background-color: var(--color-decor-circle);
-  opacity: 1;
+  background-image: url("../assets/images/cta-side-decor.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -981,6 +1005,7 @@ input:focus-visible {
   color: var(--color-main);
 }
 
+/* Article sidebar */
 .article-sidebar {
   display: grid;
   gap: 24px;
@@ -1052,13 +1077,14 @@ input:focus-visible {
 
 .sidebar-card__badge,
 .sidebar-card__badges span {
+  background-color: rgb(255 255 255 / 50%);
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  min-height: 18px;
-  padding: 0;
-  border-radius: 0;
-  background-color: transparent;
+  min-height: 24px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  background-color: var(--color-white);
   color: var(--color-dark);
   font-size: 12px;
   font-weight: 400;

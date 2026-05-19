@@ -1,3 +1,4 @@
+/* Tablet and small desktop */
 @media (max-width: 1279px) {
   .container {
     max-width: none;
@@ -32,6 +33,18 @@
   .article__section--side-decor::after,
   .cta::after {
     display: none;
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .article__tags-list {
+    display: none;
+  }
+
+  .article-page {
+    padding-bottom: 56px;
   }
 
   .header__container {
@@ -109,6 +122,7 @@
   }
 }
 
+/* iPad Pro article/sidebar adjustments */
 @media (min-width: 901px) and (max-width: 1024px) {
   .sidebar-card--care {
     width: 100%;
@@ -177,6 +191,7 @@
   }
 }
 
+/* Tablet layout */
 @media (max-width: 900px) {
 
   .header__nav,
@@ -427,6 +442,7 @@
   }
 }
 
+/* Mobile layout */
 @media (max-width: 560px) {
   .container {
     padding-right: 16px;
@@ -550,6 +566,8 @@
   }
 
 
+
+
   .sidebar-care__title {
     left: 0;
     width: 100%;
@@ -603,6 +621,7 @@
   }
 }
 
+/* Small mobile layout */
 @media (max-width: 360px) {
   .container {
     padding-right: 16px;
@@ -655,6 +674,7 @@
   .sidebar-card--person .sidebar-card__text,
   .sidebar-card__badge,
   .sidebar-card__badges span {
+    background-color: rgb(255 255 255 / 50%);
     font-size: 12px;
     line-height: 18px;
   }
