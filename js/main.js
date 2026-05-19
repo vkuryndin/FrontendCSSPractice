@@ -1,3 +1,32 @@
+const addMediaQueryChangeListener = (mediaQuery, handler) => {
+  if (typeof mediaQuery.addEventListener === 'function') {
+    mediaQuery.addEventListener('change', handler);
+    return;
+  }
+
+  if (typeof mediaQuery.addListener === 'function') {
+    mediaQuery.addListener(handler);
+  }
+};
+
+
+const initStubLinks = () => {
+  document.querySelectorAll('a[href="#"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+    });
+  });
+};
+
+const initStubForms = () => {
+  document.querySelectorAll('form[action="#"]').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+    });
+  });
+};
+
+
 const initMobileMenu = () => {
   const header = document.querySelector('[data-header]');
   const burgerButton = document.querySelector('.header__burger');
@@ -18,13 +47,15 @@ const initMobileMenu = () => {
       return;
     }
 
+    const focusWasInMenu = mobileMenu.contains(document.activeElement);
+
     header.classList.remove('is-open');
     document.body.classList.remove('is-menu-open');
     burgerButton.setAttribute('aria-expanded', 'false');
     burgerButton.setAttribute('aria-label', 'Открыть меню');
     mobileMenu.hidden = true;
 
-    if (restoreFocus) {
+    if (restoreFocus || focusWasInMenu) {
       burgerButton.focus();
     }
   };
@@ -71,7 +102,7 @@ const initMobileMenu = () => {
     }
   });
 
-  desktopQuery.addEventListener('change', (event) => {
+  addMediaQueryChangeListener(desktopQuery, (event) => {
     if (event.matches) {
       closeMenu();
     }
@@ -107,7 +138,7 @@ const initBlogMoreButton = () => {
   });
 
   syncBlogMoreButton();
-  mobileBlogQuery.addEventListener('change', (event) => {
+  addMediaQueryChangeListener(mobileBlogQuery, (event) => {
     if (!event.matches) {
       blogGrid.classList.remove('is-expanded');
     }
@@ -116,5 +147,7 @@ const initBlogMoreButton = () => {
   });
 };
 
+initStubLinks();
+initStubForms();
 initMobileMenu();
 initBlogMoreButton();

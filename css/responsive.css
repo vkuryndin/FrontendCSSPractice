@@ -111,7 +111,7 @@
 
 @media (min-width: 901px) and (max-width: 1024px) {
   .sidebar-card--care {
-    width: 222px;
+    width: 100%;
     height: 230px;
   }
 
@@ -122,8 +122,8 @@
 
   .sidebar-care__title {
     top: 47px;
-    left: 19px;
-    width: 184px;
+    left: 0;
+    width: 100%;
     height: 63px;
     font-size: 25px;
     line-height: 31px;
@@ -549,6 +549,22 @@
     padding-bottom: 36px;
   }
 
+
+  .sidebar-care__title {
+    left: 0;
+    width: 100%;
+    height: auto;
+    white-space: nowrap;
+  }
+
+  .sidebar-care__title span {
+    display: inline;
+  }
+
+  .sidebar-care__title span:first-child::after {
+    content: " ";
+  }
+
   .sidebar-card--blue .sidebar-card__image {
     max-width: 257px;
   }
@@ -614,3 +630,68 @@
     transform-origin: left top;
   }
 }
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  .sidebar-card--person {
+    min-height: 431px;
+    padding: 16px 20px 20px;
+  }
+
+  .sidebar-card__avatar-wrap {
+    margin-top: 28px;
+    margin-bottom: 18px;
+  }
+
+  .sidebar-card--person .sidebar-card__title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .sidebar-card__profession {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .sidebar-card--person .sidebar-card__text,
+  .sidebar-card__badge,
+  .sidebar-card__badges span {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .sidebar-card__divider {
+    margin: 16px 0 20px;
+  }
+
+  .sidebar-card__subtitle {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .sidebar-card__list {
+    gap: 6px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .sidebar-card--person .sidebar-card__button {
+    margin-top: 20px;
+  }
+}
+
+/* Article contents: show nested visual levels only on desktop */
+@media (max-width: 1024px) {
+  .article__contents-link--level-2,
+  .article__contents-link--level-3,
+  .article__contents-link--level-4 {
+    display: none;
+  }
+}
+
+/* Article page footer gap after sidebar cards */
+@media (min-width: 561px) and (max-width: 900px) {
+  .article-page {
+    padding-bottom: 40px;
+  }
+}
+

@@ -76,19 +76,15 @@
 </header>
 <nav aria-label="Содержание статьи" class="article__contents">
 <h2 class="article__contents-title">Содержание</h2>
-<ul class="article__contents-list">
-<li><a href="#section-1">Как понять, что отношения с мамой были дисфункциональными и привели к травме?</a></li>
-<li>
-<a href="#section-2">Мама привет!</a>
-<ul>
-<li><a href="#section-2-subtitle-1">Под под заголовок под заголовком</a></li>
-<li><a href="#section-2-subtitle-2">Под под под заголовок под заголовком</a></li>
-<li><a href="#section-2-subtitle-3">Под под под под заголовок под заголовком</a></li>
-</ul>
-</li>
-<li><a href="#section-3">Ну вот опять заголовок который как «привет мама»</a></li>
-<li><a href="#section-4">Как понять, что вы страдаете от материнской травмы?</a></li>
-</ul>
+<div class="article__contents-menu">
+<a class="article__contents-link article__contents-link--level-1" href="#section-1">Как понять, что отношения с мамой были дисфункциональными и привели к травме?</a>
+<a class="article__contents-link article__contents-link--level-1" href="#section-2">Мама привет!</a>
+<a class="article__contents-link article__contents-link--level-2" href="#section-2-subtitle-1">Под под заголовок под заголовком</a>
+<a class="article__contents-link article__contents-link--level-3" href="#section-2-subtitle-2">Под под под заголовок под заголовком</a>
+<a class="article__contents-link article__contents-link--level-4" href="#section-2-subtitle-3">Под под под под заголовок под заголовком</a>
+<a class="article__contents-link article__contents-link--level-1" href="#section-3">Ну вот опять заголовок который как «привет мама»</a>
+<a class="article__contents-link article__contents-link--level-1" href="#section-4">Как понять, что вы страдаете от материнской травмы?</a>
+</div>
 </nav>
 <section class="article__section" id="section-1">
 <h2 class="article__subtitle">Заголовок h3</h2>
@@ -115,6 +111,7 @@
 </blockquote>
 </section>
 <section class="article__section article__section--side-decor" id="section-3">
+<h2 class="visually-hidden">Ну вот опять заголовок который как «привет мама»</h2>
 <p>Одна из ключевых задач психотерапии как раз и заключается в том, чтобы этот репертуар расширять и обучать человека пользоваться доступными ему реакциями в той последовательности, пропорции и объеме, которые подходят именно ему. Без оглядки на то, «как правильно» или «как у других».</p>
 
             <div class="article__media-row">
@@ -147,6 +144,7 @@
 </div>
 </section>
 <section class="article__section">
+<h2 class="visually-hidden">Дополнительные материалы статьи</h2>
 <div class="article__cards">
 <figure class="article__figure">
 <img alt="Стул с книгами у стены" src="assets/images/article-chair.png" decoding="async" loading="lazy" width="333" height="235"/>
@@ -185,10 +183,12 @@
 </section>
 <section class="sidebar-card sidebar-card--person">
 <div aria-label="Форматы консультации" class="sidebar-card__badges">
-<span><span aria-hidden="true">📝</span> Переписка</span>
-<span><span aria-hidden="true">📹</span> Видео</span>
+<span class="sidebar-card__badge"><img alt="" aria-hidden="true" class="sidebar-card__badge-icon" src="assets/icons/sidebar-message.png" decoding="async" width="14" height="14"/> Переписка</span>
+<span class="sidebar-card__badge"><img alt="" aria-hidden="true" class="sidebar-card__badge-icon" src="assets/icons/sidebar-video.png" decoding="async" width="14" height="14"/> Видео</span>
 </div>
+<div class="sidebar-card__avatar-wrap">
 <img alt="Психолог Лилия" class="sidebar-card__avatar" src="assets/images/sidebar-person.png" decoding="async" width="120" height="120"/>
+</div>
 <h2 class="sidebar-card__title">Лилия</h2>
 <p class="sidebar-card__profession">Психолог</p>
 <p class="sidebar-card__text">Опыт 6 лет · 43 года</p>
@@ -266,16 +266,16 @@
 </a>
 <div aria-label="Социальные сети" class="footer__social-list">
 <a aria-label="ВКонтакте" class="footer__social-link" href="#">
-<img alt="" class="footer__social-icon" src="assets/images/social-vk.png" decoding="async" width="32" height="32" aria-hidden="true"/>
+<img alt="" class="footer__social-icon" src="assets/icons/social-vk.svg" decoding="async" width="32" height="32" aria-hidden="true"/>
 </a>
 <a aria-label="Telegram" class="footer__social-link" href="#">
-<img alt="" class="footer__social-icon" src="assets/images/social-telegram.png" decoding="async" width="32" height="32" aria-hidden="true"/>
+<img alt="" class="footer__social-icon" src="assets/icons/social-telegram.svg" decoding="async" width="32" height="32" aria-hidden="true"/>
 </a>
 <a aria-label="Twitter" class="footer__social-link" href="#">
-<img alt="" class="footer__social-icon" src="assets/images/social-twitter.png" decoding="async" width="32" height="32" aria-hidden="true"/>
+<img alt="" class="footer__social-icon" src="assets/icons/social-twitter.svg" decoding="async" width="32" height="32" aria-hidden="true"/>
 </a>
 <a aria-label="Дзен" class="footer__social-link" href="#">
-<img alt="" class="footer__social-icon" src="assets/images/social-dzen.png" decoding="async" width="32" height="32" aria-hidden="true"/>
+<img alt="" class="footer__social-icon" src="assets/icons/social-dzen.svg" decoding="async" width="32" height="32" aria-hidden="true"/>
 </a>
 </div>
 </div>

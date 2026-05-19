@@ -38,7 +38,6 @@ body {
   line-height: 1.5;
   color: var(--color-dark);
   background-color: var(--color-white);
-  scroll-behavior: smooth;
 }
 
 body.is-menu-open {
@@ -290,13 +289,19 @@ input:focus-visible {
   z-index: 0;
   width: 100vw;
   height: 672px;
-  background-image: url("../assets/images/blog-bg-desktop.svg");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 100%;
   pointer-events: none;
   transform: translateX(-50%);
 }
+
+@media (min-width: 1025px) {
+  .blog::before {
+    background-image: url("../assets/images/blog-bg-desktop.svg");
+  }
+}
+
 .blog > .container {
   position: relative;
   z-index: 1;
@@ -482,9 +487,6 @@ input:focus-visible {
   min-width: 182px;
 }
 
-.blog__more .button[hidden] {
-  display: none;
-}
 
 /* Article styles are defined in the dedicated article section below. */
 
@@ -638,7 +640,6 @@ input:focus-visible {
 .article-page {
   position: relative;
   overflow: hidden;
-  padding-bottom: 0;
 }
 
 .article__section--side-decor {
@@ -662,6 +663,9 @@ input:focus-visible {
 
 .cta {
   position: relative;
+  margin-top: 48px;
+  padding: 72px 0 108px;
+  border-top: 1px solid var(--color-border);
 }
 
 .cta::after {
@@ -1032,49 +1036,95 @@ input:focus-visible {
 
 .sidebar-card--person {
   position: relative;
-  padding: 16px;
+  min-height: 481px;
+  padding: 16px 24px 24px;
+  box-shadow: 0 30px 50px #eff5fb;
 }
 
 .sidebar-card__badges {
   position: absolute;
   top: 16px;
   left: 16px;
+  z-index: 2;
   display: grid;
   gap: 8px;
-  font-size: 12px;
-  line-height: 18px;
 }
 
+.sidebar-card__badge,
 .sidebar-card__badges span {
+  display: inline-flex;
+  align-items: center;
   width: fit-content;
-  padding: 0 6px;
-  border-radius: var(--radius-medium);
-  background-color: rgba(243, 244, 248, 0.7);
+  min-height: 18px;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--color-dark);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.25px;
+}
+
+.sidebar-card__badge-icon {
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+}
+
+.sidebar-card__avatar-wrap {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 24px auto 24px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .sidebar-card__avatar {
-  width: min(100%, 120px);
-  aspect-ratio: 1 / 1;
-  height: auto;
-  margin: 32px auto 16px;
+  display: block;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
 }
 
+.sidebar-card--person .sidebar-card__title {
+  margin: 0;
+  color: var(--color-dark);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+}
+
 .sidebar-card__profession {
-  margin-top: 0;
+  margin: 4px 0 0;
+  color: var(--color-dark);
+  font-size: 16px;
   font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+}
+
+.sidebar-card--person .sidebar-card__text {
+  margin: 4px 0 0;
+  color: #a2a7b1;
+  font-size: 14px;
+  line-height: 20px;
   text-align: center;
 }
 
 .sidebar-card__divider {
   height: 1px;
-  margin: 16px 0;
+  margin: 20px 0 24px;
   background-color: var(--color-border);
 }
 
 .sidebar-card__subtitle {
-  margin-bottom: 8px;
+  margin: 0 0 8px;
+  color: var(--color-dark);
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
@@ -1083,15 +1133,20 @@ input:focus-visible {
 .sidebar-card__list {
   display: grid;
   gap: 8px;
-  margin-top: 0;
+  margin: 0;
   padding-left: 20px;
   list-style: disc;
+  color: var(--color-dark);
   font-size: 14px;
   line-height: 20px;
 }
 
 .sidebar-card__list li::marker {
   color: var(--color-main);
+}
+
+.sidebar-card--person .sidebar-card__button {
+  margin-top: 24px;
 }
 
 .sidebar-card--image {
@@ -1109,7 +1164,7 @@ input:focus-visible {
 /* Sidebar gift/care block */
 .sidebar-card--care {
   position: relative;
-  width: 282px;
+  width: 100%;
   height: 292px;
   max-width: 100%;
   padding: 0;
@@ -1139,9 +1194,9 @@ input:focus-visible {
 .sidebar-care__title {
   position: absolute;
   top: 60px;
-  left: 24px;
+  left: 0;
   z-index: 4;
-  width: 234px;
+  width: 100%;
   height: 80px;
   margin: 0;
   color: var(--color-white);
@@ -1254,12 +1309,6 @@ input:focus-visible {
   font-size: 16px;
 }
 
-.cta {
-  margin-top: 48px;
-  padding: 72px 0 108px;
-  border-top: 1px solid var(--color-border);
-}
-
 .cta__container {
   min-height: 330px;
   background-image: url("../assets/images/cta-people.png");
@@ -1336,3 +1385,72 @@ input:focus-visible {
   position: relative;
   z-index: 1;
 }
+
+/* Article contents levels layout */
+.article__contents-menu {
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: var(--color-dark);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.article__contents-link {
+  position: relative;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 8px;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.article__contents-link:last-child {
+  margin-bottom: 0;
+}
+
+.article__contents-link::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-main);
+}
+
+.article__contents-link--level-1 {
+  padding-left: 32px;
+}
+
+.article__contents-link--level-1::before {
+  left: 12px;
+}
+
+.article__contents-link--level-2 {
+  padding-left: 56px;
+}
+
+.article__contents-link--level-2::before {
+  left: 36px;
+}
+
+.article__contents-link--level-3 {
+  padding-left: 72px;
+}
+
+.article__contents-link--level-3::before {
+  left: 52px;
+}
+
+.article__contents-link--level-4 {
+  padding-left: 88px;
+}
+
+.article__contents-link--level-4::before {
+  left: 68px;
+}
+
