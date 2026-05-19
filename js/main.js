@@ -3,8 +3,10 @@ const burgerButton = document.querySelector('.header__burger');
 const mobileMenu = document.querySelector('#mobile-menu');
 const mobileLinks = document.querySelectorAll('.header__mobile-link');
 
+const isMenuOpen = () => Boolean(header?.classList.contains('is-open'));
+
 const closeMenu = () => {
-  if (!header || !burgerButton) {
+  if (!header || !burgerButton || !mobileMenu || !isMenuOpen()) {
     return;
   }
 
@@ -12,19 +14,44 @@ const closeMenu = () => {
   document.body.classList.remove('is-menu-open');
   burgerButton.setAttribute('aria-expanded', 'false');
   burgerButton.setAttribute('aria-label', 'Открыть меню');
+  mobileMenu.hidden = true;
+};
+
+const openMenu = () => {
+  if (!header || !burgerButton || !mobileMenu) {
+    return;
+  }
+
+  mobileMenu.hidden = false;
+  header.classList.add('is-open');
+  document.body.classList.add('is-menu-open');
+  burgerButton.setAttribute('aria-expanded', 'true');
+  burgerButton.setAttribute('aria-label', 'Закрыть меню');
+  mobileMenu.querySelector('a, button')?.focus();
 };
 
 if (header && burgerButton && mobileMenu) {
-  burgerButton.addEventListener('click', () => {
-    const isOpen = header.classList.toggle('is-open');
+  burgerButton.addEventListener('click', (event) => {
+    event.stopPropagation();
 
-    document.body.classList.toggle('is-menu-open', isOpen);
-    burgerButton.setAttribute('aria-expanded', String(isOpen));
-    burgerButton.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+    if (isMenuOpen()) {
+      closeMenu();
+      return;
+    }
+
+    openMenu();
+  });
+
+  mobileMenu.addEventListener('click', (event) => {
+    event.stopPropagation();
   });
 
   mobileLinks.forEach((link) => {
     link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', () => {
+    closeMenu();
   });
 
   document.addEventListener('keydown', (event) => {
