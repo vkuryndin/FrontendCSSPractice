@@ -94,7 +94,7 @@ const initBlogMoreButton = () => {
     const isExpanded = blogGrid.classList.contains('is-expanded');
 
     blogMoreButton.hidden = isMobileBlog && isExpanded;
-    blogMoreButton.setAttribute('aria-expanded', String(isExpanded));
+    blogMoreButton.setAttribute('aria-expanded', String(isMobileBlog && isExpanded));
   };
 
   blogMoreButton.addEventListener('click', () => {
@@ -107,7 +107,13 @@ const initBlogMoreButton = () => {
   });
 
   syncBlogMoreButton();
-  mobileBlogQuery.addEventListener('change', syncBlogMoreButton);
+  mobileBlogQuery.addEventListener('change', (event) => {
+    if (!event.matches) {
+      blogGrid.classList.remove('is-expanded');
+    }
+
+    syncBlogMoreButton();
+  });
 };
 
 initMobileMenu();

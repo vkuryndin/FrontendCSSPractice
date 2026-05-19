@@ -40,7 +40,15 @@
 
   .blog {
     padding-bottom: 60px;
-    background: linear-gradient(to bottom, var(--color-white) 0 390px, var(--color-blog-bg) 390px 100%);
+    background-color: var(--color-white);
+  }
+
+  .blog::before {
+    display: none;
+  }
+
+  .article-page + .footer::before {
+    display: none;
   }
 
   .blog__filters {
@@ -78,7 +86,8 @@
     padding: 20px;
   }
 
-  .sidebar-card--image {
+  .sidebar-card--image,
+  .sidebar-card--care {
     padding: 0;
   }
 
@@ -97,6 +106,48 @@
 
   .footer__social {
     grid-column: auto;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  .sidebar-card--care {
+    width: 222px;
+    height: 230px;
+  }
+
+  .sidebar-care__confetti {
+    width: 220px;
+    height: 151px;
+  }
+
+  .sidebar-care__title {
+    top: 47px;
+    left: 19px;
+    width: 184px;
+    height: 63px;
+    font-size: 25px;
+    line-height: 31px;
+  }
+
+  .sidebar-care__gift--yellow {
+    top: 142px;
+    left: 0;
+    width: 107px;
+    height: 88px;
+  }
+
+  .sidebar-care__gift--blue {
+    top: 122px;
+    left: 79px;
+    width: 131px;
+    height: 110px;
+  }
+
+  .sidebar-care__gift--red {
+    top: 173px;
+    left: 138px;
+    width: 84px;
+    height: 60px;
   }
 }
 
@@ -185,6 +236,7 @@
 
   .sidebar-card--blue,
   .sidebar-card--image,
+  .sidebar-card--care,
   .sidebar-card--person,
   .sidebar-card--price {
     min-width: 0;
@@ -491,6 +543,10 @@
   .article-sidebar {
     grid-template-columns: 1fr;
     margin-top: 32px;
+  }
+
+  .article-page {
+    padding-bottom: 36px;
   }
 
   .sidebar-card--blue .sidebar-card__image {
