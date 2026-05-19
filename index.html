@@ -6,6 +6,20 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>YouTalk — Блог</title>
 <meta content="Блог YouTalk о психотерапии, самопомощи, отношениях и личных границах." name="description"/>
+<meta content="YouTalk" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="YouTalk — Блог" property="og:title"/>
+<meta content="Блог YouTalk о психотерапии, самопомощи, отношениях и личных границах." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="assets/images/blog-card-1.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="YouTalk — Блог" name="twitter:title"/>
+<meta content="Блог YouTalk о психотерапии, самопомощи, отношениях и личных границах." name="twitter:description"/>
+<meta content="assets/images/blog-card-1.png" name="twitter:image"/>
+<link href="assets/icons/logo.svg" rel="icon" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="css/normalize.css" rel="stylesheet"/>
 <link href="css/style.css" rel="stylesheet"/>
 <link href="css/responsive.css" rel="stylesheet"/>
@@ -15,7 +29,7 @@
 <header class="header" data-header="">
 <div class="container header__container">
 <a aria-label="YouTalk — на главную" class="header__logo" href="index.html">
-<img alt="YouTalk" class="header__logo-image" src="assets/icons/logo.svg"/>
+<img alt="YouTalk" class="header__logo-image" src="assets/icons/logo.svg" decoding="async" width="51" height="36"/>
 </a>
 <nav aria-label="Основная навигация" class="header__nav">
 <a class="header__link" href="#">О нас</a>
@@ -28,9 +42,9 @@
 </nav>
 <button class="header__button" type="button">Подобрать психолога</button>
 <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Открыть меню" class="header__burger" type="button">
-<span class="header__burger-line"></span>
-<span class="header__burger-line"></span>
-<span class="header__burger-line"></span>
+<span aria-hidden="true" class="header__burger-line"></span>
+<span aria-hidden="true" class="header__burger-line"></span>
+<span aria-hidden="true" class="header__burger-line"></span>
 </button>
 </div>
 <nav aria-label="Мобильная навигация" class="header__mobile-menu" hidden="" id="mobile-menu">
@@ -56,12 +70,12 @@
 <h1 class="blog__title" id="blog-title">Блог</h1>
 <div aria-label="Фильтры статей" class="blog__filters">
 <button aria-pressed="true" class="filter-chip filter-chip--active" type="button">
-<img alt="" aria-hidden="true" class="filter-chip__icon" src="assets/images/SmilingFace.png"/>
+<img alt="" aria-hidden="true" class="filter-chip__icon" src="assets/images/SmilingFace.png" decoding="async" width="20" height="20"/>
             Все
           </button>
 <button aria-pressed="false" class="filter-chip" type="button">Самооценка и самопринятие</button>
 <button aria-pressed="false" class="filter-chip" type="button">
-<img alt="" aria-hidden="true" class="filter-chip__icon" src="assets/images/Unicorn.png"/>
+<img alt="" aria-hidden="true" class="filter-chip__icon" src="assets/images/Unicorn.png" decoding="async" width="20" height="20"/>
             Self
           </button>
 <button aria-pressed="false" class="filter-chip" type="button">Чувства и эмоции</button>
@@ -73,11 +87,11 @@
 </div>
 </section>
 <section aria-label="Статьи блога" class="blog__articles">
-<div class="blog__grid">
+<div class="blog__grid" data-blog-grid="">
 <article class="article-card article-card--large">
 <a aria-label="Открыть статью: Эмоциональное выгорание" class="article-card__image-link" href="article.html">
-<img alt="Яйца с нарисованными эмоциями" class="article-card__image" src="assets/images/blog-card-1.png"/>
-<span class="article-card__tags"><span class="article-card__tag">Самооценка и самопринятие</span><span class="article-card__tag">Self</span></span>
+<img alt="Яйца с нарисованными эмоциями" class="article-card__image" src="assets/images/blog-card-1.png" decoding="async" width="586" height="260"/>
+<span class="article-card__tags"><span class="article-card__tag" data-icon="unicorn">Самооценка и самопринятие</span><span class="article-card__tag" data-icon="unicorn">Self</span></span>
 </a>
 <div class="article-card__body">
 <h2 class="article-card__title"><a href="article.html">Эмоциональное выгорание — стадии и симптомы, методы восстановления и профилактики</a></h2>
@@ -88,8 +102,8 @@
 </article>
 <article class="article-card article-card--large">
 <a aria-label="Открыть статью: Как не утонуть в тревоге" class="article-card__image-link" href="article.html">
-<img alt="Человек бежит по дороге" class="article-card__image" src="assets/images/blog-card-2.png"/>
-<span class="article-card__tags"><span class="article-card__tag">Self</span></span>
+<img alt="Человек бежит по дороге" class="article-card__image" src="assets/images/blog-card-2.png" decoding="async" width="586" height="260"/>
+<span class="article-card__tags"><span class="article-card__tag" data-icon="unicorn">Self</span></span>
 </a>
 <div class="article-card__body">
 <h2 class="article-card__title"><a href="article.html">Как не утонуть в тревоге и управлять своими страхами</a></h2>
@@ -99,8 +113,10 @@
 </div>
 </article>
 <article class="article-card article-card--small">
-<img alt="Человек лежит в кровати" class="article-card__image" src="assets/images/blog-card-3.png"/>
-<span class="article-card__tags"><span class="article-card__tag">Самооценка и самопринятие</span><span class="article-card__tag">Психология питания</span></span>
+<a aria-label="Открыть статью: Эмоциональное выгорание — стадии и симптомы, методы восстановления и профилактики" class="article-card__image-link" href="article.html">
+<img alt="Человек лежит в кровати" class="article-card__image" src="assets/images/blog-card-3.png" decoding="async" loading="lazy" width="382" height="260"/>
+<span class="article-card__tags"><span class="article-card__tag" data-icon="unicorn">Самооценка и самопринятие</span><span class="article-card__tag" data-icon="unicorn">Психология питания</span></span>
+</a>
 <div class="article-card__body">
 <h2 class="article-card__title"><a href="article.html">Эмоциональное выгорание — стадии и симптомы, методы восстановления и профилактики</a></h2>
 <p class="article-card__author">Автор: Лиза Файнтух</p>
@@ -109,8 +125,10 @@
 </div>
 </article>
 <article class="article-card article-card--small">
-<img alt="Девушка плывет в воде" class="article-card__image" src="assets/images/blog-card-4.png"/>
-<span class="article-card__tags"><span class="article-card__tag">Self</span></span>
+<a aria-label="Открыть статью: Как не утонуть в тревоге и управлять своими страхами" class="article-card__image-link" href="article.html">
+<img alt="Девушка плывет в воде" class="article-card__image" src="assets/images/blog-card-4.png" decoding="async" loading="lazy" width="382" height="260"/>
+<span class="article-card__tags"><span class="article-card__tag" data-icon="unicorn">Self</span></span>
+</a>
 <div class="article-card__body">
 <h2 class="article-card__title"><a href="article.html">Как не утонуть в тревоге и управлять своими страхами</a></h2>
 <p class="article-card__author">Автор: Екатерина Бельтюкова</p>
@@ -118,9 +136,11 @@
 <time class="article-card__date" datetime="2021-08-11">11.08.2021</time>
 </div>
 </article>
-<article class="article-card article-card--small">
-<img alt="Лист с грустным лицом на фоне стены" class="article-card__image" src="assets/images/blog-card-5.png"/>
-<span class="article-card__tags"><span class="article-card__tag">Упражнения</span></span>
+<article class="article-card article-card--small" data-mobile-extra-card="">
+<a aria-label="Открыть статью: Как управлять своими эмоциями: 8 шагов" class="article-card__image-link" href="article.html">
+<img alt="Лист с грустным лицом на фоне стены" class="article-card__image" src="assets/images/blog-card-5.png" decoding="async" loading="lazy" width="382" height="260"/>
+<span class="article-card__tags"><span class="article-card__tag" data-icon="unicorn">Упражнения</span></span>
+</a>
 <div class="article-card__body">
 <h2 class="article-card__title"><a href="article.html">Как управлять своими эмоциями: 8 шагов</a></h2>
 <p class="article-card__author">Автор: Екатерина Бельтюкова</p>
@@ -128,9 +148,11 @@
 <time class="article-card__date" datetime="2021-08-07">07.08.2021</time>
 </div>
 </article>
-<article class="article-card article-card--small">
-<img alt="Женщина работает за ноутбуком" class="article-card__image" src="assets/images/blog-card-6.png"/>
-<span class="article-card__tags"><span class="article-card__tag">Тревога</span></span>
+<article class="article-card article-card--small" data-mobile-extra-card="">
+<a aria-label="Открыть статью: Эмоциональное выгорание — стадии и симптомы, методы восстановления и профилактики" class="article-card__image-link" href="article.html">
+<img alt="Женщина работает за ноутбуком" class="article-card__image" src="assets/images/blog-card-6.png" decoding="async" loading="lazy" width="382" height="260"/>
+<span class="article-card__tags"><span class="article-card__tag" data-icon="unicorn">Тревога</span></span>
+</a>
 <div class="article-card__body">
 <h2 class="article-card__title"><a href="article.html">Эмоциональное выгорание — стадии и симптомы, методы восстановления и профилактики</a></h2>
 <p class="article-card__author">Автор: Лиза Файнтух под редакцией Екатерины Бельтюковой</p>
@@ -138,9 +160,11 @@
 <time class="article-card__date" datetime="2021-08-21">21.08.2021</time>
 </div>
 </article>
-<article class="article-card article-card--small">
-<img alt="Женщина разговаривает по видеосвязи" class="article-card__image" src="assets/images/blog-card-7.png"/>
-<span class="article-card__tags"><span class="article-card__tag">Самооценка и самопринятие</span></span>
+<article class="article-card article-card--small" data-mobile-extra-card="">
+<a aria-label="Открыть статью: Как не утонуть в тревоге и управлять своими страхами" class="article-card__image-link" href="article.html">
+<img alt="Женщина разговаривает по видеосвязи" class="article-card__image" src="assets/images/blog-card-7.png" decoding="async" loading="lazy" width="382" height="260"/>
+<span class="article-card__tags"><span class="article-card__tag" data-icon="unicorn">Самооценка и самопринятие</span></span>
+</a>
 <div class="article-card__body">
 <h2 class="article-card__title"><a href="article.html">Как не утонуть в тревоге и управлять своими страхами</a></h2>
 <p class="article-card__author">Автор: Екатерина Бельтюкова</p>
@@ -148,9 +172,11 @@
 <time class="article-card__date" datetime="2021-08-11">11.08.2021</time>
 </div>
 </article>
-<article class="article-card article-card--small">
-<img alt="Люди идут по светлому помещению" class="article-card__image" src="assets/images/blog-card-8.png"/>
-<span class="article-card__tags"><span class="article-card__tag">Психология</span></span>
+<article class="article-card article-card--small" data-mobile-extra-card="">
+<a aria-label="Открыть статью: Как управлять своими эмоциями: 8 шагов" class="article-card__image-link" href="article.html">
+<img alt="Люди идут по светлому помещению" class="article-card__image" src="assets/images/blog-card-8.png" decoding="async" loading="lazy" width="382" height="260"/>
+<span class="article-card__tags"><span class="article-card__tag" data-icon="unicorn">Психология</span></span>
+</a>
 <div class="article-card__body">
 <h2 class="article-card__title"><a href="article.html">Как управлять своими эмоциями: 8 шагов</a></h2>
 <p class="article-card__author">Автор: Екатерина Бельтюкова</p>
@@ -160,7 +186,7 @@
 </article>
 </div>
 <div class="blog__more">
-<button class="button button--primary" type="button">Ещё</button>
+<button class="button button--primary" type="button" data-blog-more-button="" aria-expanded="false">Ещё</button>
 </div>
 </section>
 </div>
@@ -195,21 +221,21 @@
 </section>
 <div class="footer__social">
 <a aria-label="Участник проекта Сколково" class="footer__participant" href="#">
-<img alt="" class="footer__participant-logo" src="assets/icons/footer-sk-logo.svg"/>
-<img alt="Участник проекта Сколково" class="footer__participant-title" src="assets/icons/footer-participant.svg"/>
+<img alt="" class="footer__participant-logo" src="assets/icons/footer-sk-logo.svg" decoding="async" width="100" height="50" aria-hidden="true"/>
+<img alt="Участник проекта Сколково" class="footer__participant-title" src="assets/icons/footer-participant.svg" decoding="async" width="113" height="20"/>
 </a>
 <div aria-label="Социальные сети" class="footer__social-list">
 <a aria-label="ВКонтакте" class="footer__social-link" href="#">
-<img alt="" class="footer__social-icon" src="assets/images/social-vk.png"/>
+<img alt="" class="footer__social-icon" src="assets/images/social-vk.png" decoding="async" width="32" height="32" aria-hidden="true"/>
 </a>
 <a aria-label="Telegram" class="footer__social-link" href="#">
-<img alt="" class="footer__social-icon" src="assets/images/social-telegram.png"/>
+<img alt="" class="footer__social-icon" src="assets/images/social-telegram.png" decoding="async" width="32" height="32" aria-hidden="true"/>
 </a>
 <a aria-label="Twitter" class="footer__social-link" href="#">
-<img alt="" class="footer__social-icon" src="assets/images/social-twitter.png"/>
+<img alt="" class="footer__social-icon" src="assets/images/social-twitter.png" decoding="async" width="32" height="32" aria-hidden="true"/>
 </a>
 <a aria-label="Дзен" class="footer__social-link" href="#">
-<img alt="" class="footer__social-icon" src="assets/images/social-dzen.png"/>
+<img alt="" class="footer__social-icon" src="assets/images/social-dzen.png" decoding="async" width="32" height="32" aria-hidden="true"/>
 </a>
 </div>
 </div>
