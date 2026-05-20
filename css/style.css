@@ -44,6 +44,20 @@
   --breadcrumb-arrow-width: 6px;
   --breadcrumb-arrow-height: 11px;
   --breadcrumb-arrow-gap: 8px;
+  --article-side-decor-image: url("../assets/images/article-side-decor.svg");
+  --article-side-decor-width: 686px;
+  --article-side-decor-height: 606px;
+  --article-side-decor-right: calc(-50vw - 380px);
+  --article-side-decor-top: 50%;
+  --article-side-decor-translate-y: -35%;
+  --cta-side-decor-image: url("../assets/images/cta-side-decor.svg");
+  --cta-side-decor-width: 272px;
+  --cta-side-decor-height: 240px;
+  --cta-side-decor-right: -190px;
+  --cta-side-decor-top: 52%;
+  --article-footer-decor-image: url("../assets/images/article-footer-bg.svg");
+  --article-footer-decor-height: 82px;
+  --article-footer-decor-background-height: 672px;
 }
 
 body {
@@ -207,6 +221,7 @@ input:focus-visible {
   transform: rotate(90deg);
   transform-origin: center;
 }
+
 
 .header__button {
   flex: 0 0 230px;
@@ -679,32 +694,38 @@ input:focus-visible {
 /* Article page */
 .article-page {
   position: relative;
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+@supports not (overflow: clip) {
+  .article-page {
+    overflow-x: hidden;
+  }
 }
 
 .article__section--side-decor {
   position: relative;
+  isolation: isolate;
 }
 
 .article__section--side-decor::after {
   content: "";
   position: absolute;
-  top: 50%;
-  right: calc(-50vw - 380px);
+  top: var(--article-side-decor-top);
+  right: var(--article-side-decor-right);
   z-index: -1;
-  width: 686px;
-  height: 606px;
-  background-image: url("../assets/images/article-side-decor.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-  transform: translateY(-35%);
+  width: var(--article-side-decor-width);
+  height: var(--article-side-decor-height);
+  background: var(--article-side-decor-image) center / 100% 100% no-repeat;
+  transform: translateY(var(--article-side-decor-translate-y));
   pointer-events: none;
 }
 
 /* CTA */
 .cta {
   position: relative;
+  isolation: isolate;
   margin-top: 48px;
   padding: 72px 0 108px;
   border-top: 1px solid var(--color-border);
@@ -713,15 +734,12 @@ input:focus-visible {
 .cta::after {
   content: "";
   position: absolute;
-  top: 52%;
-  right: -190px;
+  top: var(--cta-side-decor-top);
+  right: var(--cta-side-decor-right);
   z-index: -1;
-  width: 272px;
-  height: 240px;
-  background-image: url("../assets/images/cta-side-decor.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
+  width: var(--cta-side-decor-width);
+  height: var(--cta-side-decor-height);
+  background: var(--cta-side-decor-image) center / 100% 100% no-repeat;
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -1155,15 +1173,27 @@ input:focus-visible {
   display: grid;
   gap: 8px;
   margin: 0;
-  padding-left: 20px;
-  list-style: disc;
+  padding-left: 0;
+  list-style: none;
   color: var(--color-dark);
   font-size: 14px;
   line-height: 20px;
 }
 
-.sidebar-card__list li::marker {
-  color: var(--color-main);
+.sidebar-card__list li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.sidebar-card__list li::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-main);
 }
 
 .sidebar-card--person .sidebar-card__button {
@@ -1387,11 +1417,8 @@ input:focus-visible {
   left: 50%;
   z-index: 0;
   width: 100vw;
-  height: 82px;
-  background-image: url("../assets/images/article-footer-bg.svg");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: 100% 672px;
+  height: var(--article-footer-decor-height);
+  background: var(--article-footer-decor-image) center top / 100% var(--article-footer-decor-background-height) no-repeat;
   pointer-events: none;
   transform: translateX(-50%);
 }
@@ -1431,8 +1458,8 @@ input:focus-visible {
   content: "";
   position: absolute;
   top: 10px;
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: var(--color-main);
 }
@@ -1467,4 +1494,9 @@ input:focus-visible {
 
 .article__contents-link--level-4::before {
   left: 68px;
+}
+.article__contents-link--level-2::before,
+.article__contents-link--level-3::before,
+.article__contents-link--level-4::before {
+  display: none;
 }
