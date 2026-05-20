@@ -307,8 +307,7 @@ input:focus-visible {
 
 /* Blog page */
 .blog {
-  position: relative;
-  overflow-x: hidden;
+  position: relative;  
   padding-bottom: 96px;
   background-color: var(--color-white);
 }
