@@ -828,3 +828,65 @@
     height: auto;
   }
 }
+
+/* Article sidebar care block: user-tuned image positions for narrow tablet */
+@media (min-width: 821px) and (max-width: 900px) {
+  .sidebar-care__title {
+    left: 0;
+    width: 100%;
+    height: auto;
+    white-space: nowrap;
+  }
+
+  .sidebar-care__title span {
+    display: inline;
+  }
+
+  .sidebar-care__title span:first-child::after {
+    content: " ";
+  }
+
+  .sidebar-card--care .sidebar-care__confetti {
+    position: absolute;
+    left: 45px;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    width: 320px;
+    height: auto;
+    transform: none;
+  }
+
+  .sidebar-card--care .sidebar-care__gift--yellow {
+    position: absolute;
+    left: 65px;
+    top: 190px;
+    right: auto;
+    bottom: auto;
+    width: 130px;
+    height: auto;
+    transform: none;
+  }
+
+  .sidebar-card--care .sidebar-care__gift--blue {
+    position: absolute;
+    left: 170px;
+    top: 160px;
+    right: auto;
+    bottom: auto;
+    width: 160px;
+    height: auto;
+    transform: none;
+  }
+
+  .sidebar-card--care .sidebar-care__gift--red {
+    position: absolute;
+    left: 265px;
+    top: 200px;
+    right: auto;
+    bottom: auto;
+    width: 140px;
+    height: auto;
+    transform: none;
+  }
+}
