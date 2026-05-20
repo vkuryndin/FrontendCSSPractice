@@ -208,7 +208,6 @@ input:focus-visible {
   transform-origin: center;
 }
 
-
 .header__button {
   flex: 0 0 230px;
   width: 230px;
@@ -307,7 +306,7 @@ input:focus-visible {
 
 /* Blog page */
 .blog {
-  position: relative;  
+  position: relative;
   padding-bottom: 96px;
   background-color: var(--color-white);
 }

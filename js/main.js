@@ -28,8 +28,27 @@ const getEventPath = (event) => {
 };
 
 
+const focusableSelector = [
+  'a[href]',
+  'button:not([disabled])',
+  'input:not([disabled])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  '[tabindex]:not([tabindex="-1"])',
+].join(',');
+
+const getFocusableElements = (container) => Array.from(
+  container.querySelectorAll(focusableSelector),
+).filter((element) => {
+  const isHidden = element.hidden || element.getAttribute('aria-hidden') === 'true';
+  const isVisible = Boolean(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
+
+  return !isHidden && isVisible;
+});
+
+
 const initStubLinks = () => {
-  document.querySelectorAll('a[href="#"]').forEach((link) => {
+  document.querySelectorAll('a[data-stub-link], a[href="#"]').forEach((link) => {
     link.addEventListener('click', (event) => {
       event.preventDefault();
     });
@@ -87,6 +106,41 @@ const initMobileMenu = () => {
     firstMenuControl?.focus();
   };
 
+  const trapMenuFocus = (event) => {
+    if (!isMenuOpen() || event.key !== 'Tab') {
+      return;
+    }
+
+    const focusableElements = getFocusableElements(mobileMenu);
+
+    if (focusableElements.length === 0) {
+      event.preventDefault();
+      burgerButton.focus();
+      return;
+    }
+
+    const firstFocusableElement = focusableElements[0];
+    const lastFocusableElement = focusableElements[focusableElements.length - 1];
+    const activeElement = document.activeElement;
+
+    if (!mobileMenu.contains(activeElement)) {
+      event.preventDefault();
+      firstFocusableElement.focus();
+      return;
+    }
+
+    if (event.shiftKey && activeElement === firstFocusableElement) {
+      event.preventDefault();
+      lastFocusableElement.focus();
+      return;
+    }
+
+    if (!event.shiftKey && activeElement === lastFocusableElement) {
+      event.preventDefault();
+      firstFocusableElement.focus();
+    }
+  };
+
   burgerButton.addEventListener('click', () => {
     if (isMenuOpen()) {
       closeMenu({ restoreFocus: true });
@@ -117,7 +171,10 @@ const initMobileMenu = () => {
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       closeMenu({ restoreFocus: true });
+      return;
     }
+
+    trapMenuFocus(event);
   });
 
   addMediaQueryChangeListener(desktopQuery, (event) => {
