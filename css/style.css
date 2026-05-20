@@ -1059,8 +1059,8 @@ input:focus-visible {
 
 .sidebar-card--person {
   position: relative;
-  min-height: 481px;
-  padding: 16px 24px 24px;
+  min-height: 450px;
+  padding: 16px 24px 20px;
   box-shadow: 0 30px 50px #eff5fb;
 }
 
@@ -1100,7 +1100,7 @@ input:focus-visible {
   display: block;
   width: 120px;
   height: 120px;
-  margin: 24px auto 24px;
+  margin: 8px auto 16px;
   overflow: hidden;
   border-radius: 50%;
 }
@@ -1141,7 +1141,7 @@ input:focus-visible {
 
 .sidebar-card__divider {
   height: 1px;
-  margin: 20px 0 24px;
+  margin: 14px 0 18px;
   background-color: var(--color-border);
 }
 
@@ -1169,7 +1169,7 @@ input:focus-visible {
 }
 
 .sidebar-card--person .sidebar-card__button {
-  margin-top: 24px;
+  margin-top: 18px;
 }
 
 .sidebar-card__image {

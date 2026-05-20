@@ -628,13 +628,13 @@
 
 @media (min-width: 901px) and (max-width: 1024px) {
   .sidebar-card--person {
-    min-height: 431px;
-    padding: 16px 20px 20px;
+    min-height: 410px;
+    padding: 16px 20px 18px;
   }
 
   .sidebar-card__avatar-wrap {
-    margin-top: 28px;
-    margin-bottom: 18px;
+    margin-top: 8px;
+    margin-bottom: 14px;
   }
 
   .sidebar-card--person .sidebar-card__title {
@@ -656,7 +656,7 @@
   }
 
   .sidebar-card__divider {
-    margin: 16px 0 20px;
+    margin: 12px 0 16px;
   }
 
   .sidebar-card__subtitle {
@@ -671,7 +671,7 @@
   }
 
   .sidebar-card--person .sidebar-card__button {
-    margin-top: 20px;
+    margin-top: 16px;
   }
 }
 
@@ -688,6 +688,69 @@
 @media (min-width: 561px) and (max-width: 900px) {
   .article-page {
     padding-bottom: 40px;
+  }
+}
+
+
+/* Article sidebar care block: user-tuned image positions for narrow tablet */
+@media (min-width: 821px) and (max-width: 900px) {
+  .sidebar-care__title {
+    left: 0;
+    width: 100%;
+    height: auto;
+    white-space: nowrap;
+  }
+
+  .sidebar-care__title span {
+    display: inline;
+  }
+
+  .sidebar-care__title span:first-child::after {
+    content: " ";
+  }
+
+  .sidebar-card--care .sidebar-care__confetti {
+    position: absolute;
+    left: 45px;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    width: 320px;
+    height: auto;
+    transform: none;
+  }
+
+  .sidebar-card--care .sidebar-care__gift--yellow {
+    position: absolute;
+    left: 65px;
+    top: 190px;
+    right: auto;
+    bottom: auto;
+    width: 130px;
+    height: auto;
+    transform: none;
+  }
+
+  .sidebar-card--care .sidebar-care__gift--blue {
+    position: absolute;
+    left: 170px;
+    top: 160px;
+    right: auto;
+    bottom: auto;
+    width: 160px;
+    height: auto;
+    transform: none;
+  }
+
+  .sidebar-card--care .sidebar-care__gift--red {
+    position: absolute;
+    left: 265px;
+    top: 200px;
+    right: auto;
+    bottom: auto;
+    width: 140px;
+    height: auto;
+    transform: none;
   }
 }
 
@@ -826,67 +889,5 @@
     bottom: 5px;
     width: 115px;
     height: auto;
-  }
-}
-
-/* Article sidebar care block: user-tuned image positions for narrow tablet */
-@media (min-width: 821px) and (max-width: 900px) {
-  .sidebar-care__title {
-    left: 0;
-    width: 100%;
-    height: auto;
-    white-space: nowrap;
-  }
-
-  .sidebar-care__title span {
-    display: inline;
-  }
-
-  .sidebar-care__title span:first-child::after {
-    content: " ";
-  }
-
-  .sidebar-card--care .sidebar-care__confetti {
-    position: absolute;
-    left: 45px;
-    top: 0;
-    right: auto;
-    bottom: auto;
-    width: 320px;
-    height: auto;
-    transform: none;
-  }
-
-  .sidebar-card--care .sidebar-care__gift--yellow {
-    position: absolute;
-    left: 65px;
-    top: 190px;
-    right: auto;
-    bottom: auto;
-    width: 130px;
-    height: auto;
-    transform: none;
-  }
-
-  .sidebar-card--care .sidebar-care__gift--blue {
-    position: absolute;
-    left: 170px;
-    top: 160px;
-    right: auto;
-    bottom: auto;
-    width: 160px;
-    height: auto;
-    transform: none;
-  }
-
-  .sidebar-card--care .sidebar-care__gift--red {
-    position: absolute;
-    left: 265px;
-    top: 200px;
-    right: auto;
-    bottom: auto;
-    width: 140px;
-    height: auto;
-    transform: none;
   }
 }
