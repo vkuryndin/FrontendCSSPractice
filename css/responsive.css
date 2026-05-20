@@ -699,3 +699,111 @@
   }
 }
 
+
+/* Article sidebar care block: user-tuned image positions for iPad mini/tablet-mini */
+@media (min-width: 561px) and (max-width: 820px) {
+  .sidebar-care__title {
+    left: 0;
+    width: 100%;
+    height: auto;
+    white-space: nowrap;
+  }
+
+  .sidebar-care__title span {
+    display: inline;
+  }
+
+  .sidebar-care__title span:first-child::after {
+    content: " ";
+  }
+
+  .sidebar-card--care .sidebar-care__confetti {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    width: 360px;
+    height: auto;
+    transform: none;
+  }
+
+  .sidebar-card--care .sidebar-care__gift--yellow {
+    position: absolute;
+    left: 35px;
+    top: 185px;
+    right: auto;
+    bottom: auto;
+    width: 130px;
+    height: auto;
+    transform: none;
+  }
+
+  .sidebar-card--care .sidebar-care__gift--blue {
+    position: absolute;
+    left: 140px;
+    top: 155px;
+    right: auto;
+    bottom: auto;
+    width: 160px;
+    height: auto;
+    transform: none;
+  }
+
+  .sidebar-card--care .sidebar-care__gift--red {
+    position: absolute;
+    left: 215px;
+    top: 210px;
+    right: auto;
+    bottom: auto;
+    width: 140px;
+    height: auto;
+    transform: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .sidebar-card--care .sidebar-care__gift--yellow {
+    position: absolute;
+    left: 20px;
+    top: 195px;
+    right: auto;
+    bottom: auto;
+    width: 120px;
+    height: auto;
+    transform: none;
+  }
+
+  .sidebar-card--care .sidebar-care__confetti {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    right: auto;
+    bottom: auto;
+    width: 300px;
+    height: auto;
+    transform: none;
+  }
+
+  .sidebar-card--care .sidebar-care__gift--blue {
+    position: absolute;
+    left: 115px;
+    top: 195px;
+    right: auto;
+    bottom: auto;
+    width: 140px;
+    height: auto;
+    transform: none;
+  }
+
+  .sidebar-card--care .sidebar-care__gift--red {
+    position: absolute;
+    left: 215px;
+    top: 200px;
+    right: auto;
+    bottom: auto;
+    width: 130px;
+    height: auto;
+    transform: none;
+  }
+}
