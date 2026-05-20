@@ -1,0 +1,7 @@
+services:
+  youtalk-blog:
+    build: .
+    container_name: youtalk-blog
+    restart: unless-stopped
+    ports:
+      - "8082:80"

@@ -1,0 +1,8 @@
+.git
+.idea
+.claude
+*.zip
+*.log
+Thumbs.db
+.DS_Store
+node_modules
