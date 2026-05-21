@@ -44,6 +44,8 @@
   --breadcrumb-arrow-width: 6px;
   --breadcrumb-arrow-height: 11px;
   --breadcrumb-arrow-gap: 8px;
+  --article-marker-size: 8px;
+  --article-marker-color: var(--color-main);
   --article-side-decor-image: url("../assets/images/article-side-decor.svg");
   --article-side-decor-width: 686px;
   --article-side-decor-height: 606px;
@@ -815,10 +817,6 @@ input:focus-visible {
   line-height: 24px;
 }
 
-.article__list li::marker {
-  color: var(--color-main);
-  font-size: 18px;
-}
 
 .article__section {
   margin-top: 24px;
@@ -881,8 +879,25 @@ input:focus-visible {
 .article__list {
   display: grid;
   gap: 16px;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.article__list li {
+  position: relative;
   padding-left: 26px;
-  list-style: disc;
+}
+
+.article__list li::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: var(--article-marker-size);
+  height: var(--article-marker-size);
+  border-radius: 50%;
+  background-color: var(--article-marker-color);
 }
 
 .article__full-figure {
@@ -1356,6 +1371,10 @@ input:focus-visible {
   text-align: left;
 }
 
+.sidebar-card--price .sidebar-card__text {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
 .sidebar-card__price {
   margin-top: 16px;
   font-size: 24px;
@@ -1476,10 +1495,10 @@ input:focus-visible {
   content: "";
   position: absolute;
   top: 10px;
-  width: 6px;
-  height: 6px;
+  width: var(--article-marker-size);
+  height: var(--article-marker-size);
   border-radius: 50%;
-  background-color: var(--color-main);
+  background-color: var(--article-marker-color);
 }
 
 .article__contents-link--level-1 {
