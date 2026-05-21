@@ -1,3 +1,4 @@
+/* Global variables */
 :root {
   --color-main: #03b2a5;
   --color-main-dark: #029b90;
@@ -29,7 +30,7 @@
   --radius-pill: 24px;
   --transition-default: 0.2s ease;
   --container-width: 1200px;
-  /* Layout aliases */
+  /* Main layout sizes */
   --layout-article-width: 690px;
   --layout-sidebar-width: 282px;
   --layout-desktop-width: 1200px;
@@ -99,7 +100,7 @@ input:focus-visible {
   padding: 0;
 }
 
-/* Header */
+/* Header and main navigation */
 .skip-link {
   position: absolute;
   top: 8px;
@@ -321,7 +322,7 @@ input:focus-visible {
   color: var(--color-main);
 }
 
-/* Blog page */
+/* Blog page layout and article cards */
 .blog {
   position: relative;
   padding-bottom: 96px;
@@ -535,9 +536,9 @@ input:focus-visible {
   min-width: 182px;
 }
 
-/* Article styles are defined in the dedicated article section below. */
+/* Article page styles are grouped below. */
 
-/* Footer */
+/* Footer layout, subscription form and social links */
 .footer {
   padding: 40px 0 24px;
   color: var(--color-white);
@@ -682,6 +683,7 @@ input:focus-visible {
   color: var(--color-white);
 }
 
+/* Disable animation effects for reduced-motion users */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -693,7 +695,7 @@ input:focus-visible {
   }
 }
 
-/* Article page */
+/* Article page layout and decorative elements */
 .article-page {
   position: relative;
   overflow-x: clip;
@@ -724,7 +726,7 @@ input:focus-visible {
   pointer-events: none;
 }
 
-/* CTA */
+/* Desktop CTA block on the article page */
 .cta {
   position: relative;
   isolation: isolate;
@@ -1052,7 +1054,7 @@ input:focus-visible {
   color: var(--color-main);
 }
 
-/* Article sidebar */
+/* Article sidebar cards */
 .article-sidebar {
   display: grid;
   gap: 24px;
@@ -1239,7 +1241,7 @@ input:focus-visible {
   border-radius: 0;
 }
 
-/* Sidebar gift/care block */
+/* Care and price promo cards */
 .sidebar-card--care {
   position: relative;
   width: 100%;
@@ -1333,7 +1335,7 @@ input:focus-visible {
   pointer-events: none;
 }
 
-/* красная коробка — СЗАДИ */
+/* Red gift box behind */
 .sidebar-card__gift--red {
   position: absolute;
   right: 15px;
@@ -1343,7 +1345,7 @@ input:focus-visible {
   height: 106px;
 }
 
-/* синяя коробка — СПЕРЕДИ */
+/* Blue gift box in front */
 .sidebar-card__gift--blue {
   position: absolute;
   right: -13px;
@@ -1417,7 +1419,7 @@ input:focus-visible {
   line-height: 26px;
 }
 
-/* Final adaptive / Figma fixes */
+/* Shared article refinements */
 .breadcrumbs__current[aria-current="page"] {
   color: var(--color-muted);
 }
@@ -1465,7 +1467,7 @@ input:focus-visible {
   z-index: 1;
 }
 
-/* Article contents levels layout */
+/* Article contents links and markers */
 .article__contents-menu {
   display: block;
   margin: 0;
