@@ -10,7 +10,6 @@
 - Stylelint — проверка CSS;
 - Prettier — проверка форматирования.
 
-
 ## Страницы
 
 - `index.html` — страница блога
@@ -55,7 +54,6 @@ js/            — скрипт мобильного меню
 ├── .htmlhintrc             # Настройки HTMLHint
 └── .stylelintrc.json       # Настройки Stylelint
 ```
-
 
 ## Docker
 

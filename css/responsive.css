@@ -87,7 +87,10 @@
   .article-page__layout {
     grid-template-columns:
       minmax(0, var(--layout-tablet-article-width))
-      minmax(var(--layout-tablet-sidebar-min-width), var(--layout-tablet-sidebar-width));
+      minmax(
+        var(--layout-tablet-sidebar-min-width),
+        var(--layout-tablet-sidebar-width)
+      );
     gap: 24px;
   }
 
@@ -930,10 +933,8 @@
 
 /* Care-card gradient for iPad and phones.
    Desktop and iPad mini stay without this overlay. */
-@media (min-width: 901px) and (max-width: 1024px),
-  (max-width: 560px) {
+@media (min-width: 901px) and (max-width: 1024px), (max-width: 560px) {
   .sidebar-card--care::after {
     display: block;
   }
 }
-

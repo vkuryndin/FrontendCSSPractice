@@ -318,7 +318,8 @@ input:focus-visible {
   width: var(--breadcrumb-arrow-box-size);
   height: var(--breadcrumb-arrow-box-size);
   margin-left: var(--breadcrumb-arrow-gap);
-  background: var(--icon-arrow) center / var(--breadcrumb-arrow-width) var(--breadcrumb-arrow-height) no-repeat;
+  background: var(--icon-arrow) center / var(--breadcrumb-arrow-width)
+    var(--breadcrumb-arrow-height) no-repeat;
 }
 
 .breadcrumbs__link:hover {
@@ -1477,7 +1478,8 @@ input:focus-visible {
   z-index: 0;
   width: 100vw;
   height: var(--article-footer-decor-height);
-  background: var(--article-footer-decor-image) center top / 100% var(--article-footer-decor-background-height) no-repeat;
+  background: var(--article-footer-decor-image) center top / 100%
+    var(--article-footer-decor-background-height) no-repeat;
   pointer-events: none;
   transform: translateX(-50%);
 }
