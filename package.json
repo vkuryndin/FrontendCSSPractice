@@ -1,0 +1,31 @@
+{
+  "name": "youtalk-blog",
+  "version": "1.0.0",
+  "description": "Статическая адаптивная верстка двух страниц по макету YouTalk. Сессионное задание по предмету Основы frontend-разработки.",
+  "main": "index.js",
+  "scripts": {
+    "check:html": "htmlhint \"*.html\"",
+    "check:css": "stylelint \"css/**/*.css\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,json,md}\"",
+    "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
+    "check": "npm run check:html && npm run check:css && npm run format:check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkuryndin/FrontendCSSPractice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vkuryndin/FrontendCSSPractice/issues"
+  },
+  "homepage": "https://github.com/vkuryndin/FrontendCSSPractice#readme",
+  "devDependencies": {
+    "htmlhint": "^1.9.2",
+    "prettier": "^3.8.3",
+    "stylelint": "^17.12.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}

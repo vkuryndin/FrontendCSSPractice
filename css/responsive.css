@@ -22,9 +22,9 @@
   }
 
   .header__button {
-    flex-basis: 230px;
-    width: 230px;
-    min-width: 230px;
+    flex-basis: var(--header-button-width);
+    width: var(--header-button-width);
+    min-width: var(--header-button-width);
     padding: 14px 20px;
     font-size: 16px;
   }
@@ -50,7 +50,7 @@
   }
 
   .header__container {
-    height: 76px;
+    height: var(--header-height-desktop);
   }
 
   .blog {
@@ -85,16 +85,18 @@
   }
 
   .article-page__layout {
-    grid-template-columns: minmax(0, 714px) minmax(220px, 222px);
+    grid-template-columns:
+      minmax(0, var(--layout-tablet-article-width))
+      minmax(var(--layout-tablet-sidebar-min-width), var(--layout-tablet-sidebar-width));
     gap: 24px;
   }
 
   .article {
-    max-width: 714px;
+    max-width: var(--layout-tablet-article-width);
   }
 
   .article-sidebar {
-    width: min(100%, 222px);
+    width: min(100%, var(--layout-tablet-sidebar-width));
   }
 
   .sidebar-card {
@@ -163,6 +165,53 @@
     left: 138px;
     width: 84px;
     height: 60px;
+  }
+
+  .sidebar-card--person {
+    min-height: 410px;
+    padding: 16px 20px 18px;
+  }
+
+  .sidebar-card__avatar-wrap {
+    margin-top: 8px;
+    margin-bottom: 14px;
+  }
+
+  .sidebar-card--person .sidebar-card__title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .sidebar-card__profession {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .sidebar-card--person .sidebar-card__text,
+  .sidebar-card__badge,
+  .sidebar-card__badges span {
+    background-color: rgb(255 255 255 / 50%);
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .sidebar-card__divider {
+    margin: 12px 0 16px;
+  }
+
+  .sidebar-card__subtitle {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .sidebar-card__list {
+    gap: 6px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .sidebar-card--person .sidebar-card__button {
+    margin-top: 16px;
   }
 }
 
@@ -299,6 +348,10 @@
 
   .footer__bottom {
     gap: 24px 32px;
+  }
+
+  .article-page {
+    padding-bottom: 40px;
   }
 }
 
@@ -443,7 +496,7 @@
   }
 
   .header__container {
-    height: 72px;
+    height: var(--header-height-mobile);
   }
 
   .header__mobile-menu {
@@ -550,21 +603,6 @@
     padding-bottom: 36px;
   }
 
-  .sidebar-care__title {
-    left: 0;
-    width: 100%;
-    height: auto;
-    white-space: nowrap;
-  }
-
-  .sidebar-care__title span {
-    display: inline;
-  }
-
-  .sidebar-care__title span:first-child::after {
-    content: " ";
-  }
-
   .sidebar-card--blue .sidebar-card__image {
     max-width: 257px;
   }
@@ -632,56 +670,6 @@
   }
 }
 
-/* Compact psychologist card on iPad Pro */
-@media (min-width: 901px) and (max-width: 1024px) {
-  .sidebar-card--person {
-    min-height: 410px;
-    padding: 16px 20px 18px;
-  }
-
-  .sidebar-card__avatar-wrap {
-    margin-top: 8px;
-    margin-bottom: 14px;
-  }
-
-  .sidebar-card--person .sidebar-card__title {
-    font-size: 18px;
-    line-height: 24px;
-  }
-
-  .sidebar-card__profession {
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  .sidebar-card--person .sidebar-card__text,
-  .sidebar-card__badge,
-  .sidebar-card__badges span {
-    background-color: rgb(255 255 255 / 50%);
-    font-size: 12px;
-    line-height: 18px;
-  }
-
-  .sidebar-card__divider {
-    margin: 12px 0 16px;
-  }
-
-  .sidebar-card__subtitle {
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  .sidebar-card__list {
-    gap: 6px;
-    font-size: 12px;
-    line-height: 18px;
-  }
-
-  .sidebar-card--person .sidebar-card__button {
-    margin-top: 16px;
-  }
-}
-
 /* Hide nested article contents on tablet and mobile */
 @media (max-width: 1024px) {
   .article__contents-link--level-2,
@@ -691,18 +679,8 @@
   }
 }
 
-/* Extra article bottom spacing for tablet sidebar cards */
-@media (min-width: 561px) and (max-width: 900px) {
-  .article-page {
-    padding-bottom: 40px;
-  }
-}
-
-
-/* Care-card image positions.
-   Keep these pixel values exact: they are matched to the design. */
-/* Narrow tablet care-card image positions (821–900px) */
-@media (min-width: 821px) and (max-width: 900px) {
+/* One-line care-card title for tablet and mobile layouts */
+@media (max-width: 900px) {
   .sidebar-care__title {
     left: 0;
     width: 100%;
@@ -717,7 +695,12 @@
   .sidebar-care__title span:first-child::after {
     content: " ";
   }
+}
 
+/* Care-card image positions.
+   Keep these pixel values exact: they are matched to the design. */
+/* Narrow tablet care-card image positions (821–900px) */
+@media (min-width: 821px) and (max-width: 900px) {
   .sidebar-card--care .sidebar-care__confetti {
     position: absolute;
     left: 45px;
@@ -767,21 +750,6 @@
    Keep this separate from the 821–900px range. */
 /* iPad mini care-card image positions (561–820px) */
 @media (min-width: 561px) and (max-width: 820px) {
-  .sidebar-care__title {
-    left: 0;
-    width: 100%;
-    height: auto;
-    white-space: nowrap;
-  }
-
-  .sidebar-care__title span {
-    display: inline;
-  }
-
-  .sidebar-care__title span:first-child::after {
-    content: " ";
-  }
-
   .sidebar-card--care .sidebar-care__confetti {
     position: absolute;
     left: 20px;
@@ -903,6 +871,7 @@
     height: auto;
   }
 }
+
 /* Fixed care-card composition for medium mobile screens (414–560px) */
 @media (min-width: 414px) and (max-width: 560px) {
   .sidebar-card--care {

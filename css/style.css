@@ -30,9 +30,13 @@
   --radius-pill: 24px;
   --transition-default: 0.2s ease;
   --container-width: 1200px;
+  --header-button-width: 230px;
   /* Main layout sizes */
   --layout-article-width: 690px;
   --layout-sidebar-width: 282px;
+  --layout-tablet-article-width: 714px;
+  --layout-tablet-sidebar-width: 222px;
+  --layout-tablet-sidebar-min-width: 220px;
   --layout-desktop-width: 1200px;
   --header-height-desktop: 76px;
   --header-height-mobile: 72px;
@@ -169,7 +173,7 @@ input:focus-visible {
 .header__container {
   display: flex;
   align-items: center;
-  height: 76px;
+  height: var(--header-height-desktop);
   gap: 0;
 }
 
@@ -225,10 +229,9 @@ input:focus-visible {
   transform-origin: center;
 }
 
-
 .header__button {
-  flex: 0 0 230px;
-  width: 230px;
+  flex: 0 0 var(--header-button-width);
+  width: var(--header-button-width);
   height: 48px;
   margin-left: auto;
   padding: 14px 20px;
@@ -755,19 +758,21 @@ input:focus-visible {
 
 .article-page__layout {
   display: grid;
-  grid-template-columns: minmax(0, 690px) minmax(260px, 282px);
+  grid-template-columns:
+    minmax(0, var(--layout-article-width))
+    minmax(260px, var(--layout-sidebar-width));
   justify-content: space-between;
   align-items: start;
   gap: 40px;
 }
 
 .article {
-  max-width: 690px;
+  max-width: var(--layout-article-width);
   color: var(--color-dark);
 }
 
 .article__title {
-  max-width: 690px;
+  max-width: var(--layout-article-width);
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
@@ -818,7 +823,6 @@ input:focus-visible {
   font-weight: 700;
   line-height: 24px;
 }
-
 
 .article__section {
   margin-top: 24px;
@@ -1058,7 +1062,7 @@ input:focus-visible {
 .article-sidebar {
   display: grid;
   gap: 24px;
-  width: min(100%, 282px);
+  width: min(100%, var(--layout-sidebar-width));
 }
 
 .sidebar-card {
@@ -1389,11 +1393,8 @@ input:focus-visible {
 
 .sidebar-card--price .sidebar-card__text {
   max-width: 190px;
-  text-align: left;
-}
-
-.sidebar-card--price .sidebar-card__text {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  text-align: left;
 }
 
 .sidebar-card__price {
