@@ -958,3 +958,13 @@
     transform: none;
   }
 }
+
+/* Care-card gradient for iPad and phones.
+   Desktop and iPad mini stay without this overlay. */
+@media (min-width: 901px) and (max-width: 1024px),
+  (max-width: 560px) {
+  .sidebar-card--care::after {
+    display: block;
+  }
+}
+

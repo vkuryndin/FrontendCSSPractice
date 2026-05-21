@@ -1244,8 +1244,9 @@ input:focus-visible {
 /* Care and price promo cards */
 .sidebar-card--care {
   position: relative;
+  isolation: isolate;
   width: 100%;
-  height: 292px;
+  height: 90px;
   max-width: 100%;
   padding: 0;
   overflow: hidden;
@@ -1254,6 +1255,24 @@ input:focus-visible {
   background-color: var(--color-footer);
 }
 
+.sidebar-card--care::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  display: none;
+  height: 150px;
+  background: radial-gradient(
+    ellipse 120% 90px at 50% -10px,
+    rgba(255, 255, 255, 0.65) 0%,
+    rgba(255, 255, 255, 0.35) 25%,
+    rgba(255, 255, 255, 0.12) 45%,
+    rgba(255, 255, 255, 0) 65%
+  );
+  pointer-events: none;
+}
 .sidebar-care__confetti,
 .sidebar-care__gift {
   position: absolute;
