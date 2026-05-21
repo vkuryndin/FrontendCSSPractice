@@ -778,6 +778,24 @@ input:focus-visible {
   color: var(--color-text);
 }
 
+.article__meta-tag-wrap {
+  display: none;
+}
+
+.article__meta-tag {
+  color: var(--color-footer);
+}
+
+.article__meta-tag:hover {
+  color: var(--color-main);
+}
+
+@media (max-width: 1024px) {
+  .article__meta-tag-wrap {
+    display: inline;
+  }
+}
+
 .article__hero {
   display: block;
   width: 100%;
@@ -1458,8 +1476,8 @@ input:focus-visible {
   content: "";
   position: absolute;
   top: 10px;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: var(--color-main);
 }
@@ -1495,6 +1513,7 @@ input:focus-visible {
 .article__contents-link--level-4::before {
   left: 68px;
 }
+
 .article__contents-link--level-2::before,
 .article__contents-link--level-3::before,
 .article__contents-link--level-4::before {
